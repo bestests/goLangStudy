@@ -16,4 +16,5 @@ func main() {
 	fmt.Println("Devlop Test_1")
 	fmt.Println("Devlop Test_2")
 	fmt.Println("DevRepl Test_1")
+  fmt.Println("DevRepl iPad Test")
 }
