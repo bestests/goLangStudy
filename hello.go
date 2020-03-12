@@ -14,4 +14,5 @@ func main() {
 	fmt.Println("test to work computer!!!")
 	fmt.Println("Mac vsc Test!!!")
 	fmt.Println("Devlop Test_1")
+	fmt.Println("Devlop Test_2")
 }
