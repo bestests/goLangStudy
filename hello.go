@@ -12,4 +12,5 @@ func main() {
 	fmt.Println("iPad Pro Test!!!")
 	fmt.Println("Tab Test!!!")
 	fmt.Println("test to work computer!!!")
+	fmt.Println("Mac vsc Test!!!")
 }
