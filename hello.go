@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/goLangStudy/importTest"
 )
 
-func multiply (a, b int) (c int) {
+func multiply(a, b int) (c int) {
 	c = a * b
 	return
 }
@@ -19,7 +21,7 @@ func main() {
 
 	fmt.Println(nameVar)
 
-	// Only use in function 
+	// Only use in function
 	name := "Sup"
 	fmt.Println(name)
 
@@ -30,4 +32,8 @@ func main() {
 	var resultNum2 int = multiply(2, 3)
 
 	fmt.Println(resultNum2)
+
+	var resultNum3 int = importTest.Plus(2, 3)
+
+	fmt.Println(resultNum3)
 }
