@@ -26,4 +26,8 @@ func main() {
 	resultNum1 := multiply(2, 2)
 
 	fmt.Println(resultNum1)
+
+	var resultNum2 int = multiply(2, 3)
+
+	fmt.Println(resultNum2)
 }
