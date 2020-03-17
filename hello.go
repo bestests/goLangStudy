@@ -12,17 +12,17 @@ func multiply(a, b int) (c int) {
 }
 
 func main() {
-	const nameConst string = "Song"
+	const nameConst string = "Test"
 	fmt.Println(nameConst)
 
-	var nameVar string = "Song"
+	var nameVar string = "Name"
 
-	nameVar = "Chang"
+	nameVar = "Name!!!"
 
 	fmt.Println(nameVar)
 
 	// Only use in function
-	name := "Sup"
+	name := "name"
 	fmt.Println(name)
 
 	resultNum1 := multiply(2, 2)
