@@ -36,7 +36,6 @@ func main() {
 	var resultNum3 int = importTest.Plus(2, 3)
 
 	fmt.Println(resultNum3)
-<<<<<<< HEAD
 
 	var resultNum4 int = importTest.Plus(3, 4)
 
@@ -45,6 +44,8 @@ func main() {
 	var resultNum5 int = importTest.Plus(4, 7)
 
 	fmt.Println("resultNum5 - ", resultNum5)
-=======
->>>>>>> parent of dafad4c... 20200317
+
+	var resultNum6 int = importTest.Plus(5, 8)
+
+	fmt.Println("resultNum6 - ", resultNum6)
 }
