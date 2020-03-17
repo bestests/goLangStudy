@@ -36,4 +36,8 @@ func main() {
 	var resultNum3 int = importTest.Plus(2, 3)
 
 	fmt.Println(resultNum3)
+
+	var resultNum4 int = importTest.Plus(3, 4)
+
+	fmt.Println("resultNum4 - ", resultNum4)
 }
