@@ -1,10 +1,10 @@
-package main
+package forRangeArgs
 
 import (
 	"fmt"
 )
 
-func superAdd (numbers ...int) (result int) {
+func SuperAdd(numbers ...int) (result int) {
 
 	result = 0
 
@@ -16,10 +16,4 @@ func superAdd (numbers ...int) (result int) {
 	}
 
 	return
-}
-
-func main () {
-	superAddResult := superAdd(1, 2, 3, 4, 5)
-
-	fmt.Println("superAddResult - ", superAddResult)
 }

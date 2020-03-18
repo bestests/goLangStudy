@@ -1,10 +1,6 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/goLangStudy/importTest"
-)
+import pointerTest "github.com/goLangStudy/5_pointerTest"
 
 func multiply(a, b int) (c int) {
 	c = a * b
@@ -12,36 +8,60 @@ func multiply(a, b int) (c int) {
 }
 
 func main() {
-	const nameConst string = "Test"
-	fmt.Println(nameConst)
+	/*
+		// import test
+		const nameConst string = "Test"
+		fmt.Println(nameConst)
 
-	var nameVar string = "Name"
+		var nameVar string = "Name"
 
-	nameVar = "Name!!!"
+		nameVar = "Name!!!"
 
-	fmt.Println(nameVar)
+		fmt.Println(nameVar)
 
-	// Only use in function
-	name := "name"
-	fmt.Println(name)
+		// Only use in function
+		name := "name"
+		fmt.Println(name)
 
-	resultNum1 := multiply(2, 2)
+		resultNum1 := multiply(2, 2)
 
-	fmt.Println(resultNum1)
+		fmt.Println(resultNum1)
 
-	var resultNum2 int = multiply(2, 3)
+		var resultNum2 int = multiply(2, 3)
 
-	fmt.Println(resultNum2)
+		fmt.Println(resultNum2)
 
-	var resultNum3 int = importTest.Plus(2, 3)
+		var resultNum3 int = importTest.Plus(2, 3)
+		// import test
+	*/
 
-	fmt.Println(resultNum3)
+	/*
+		// 2. forRangeArgs
+		var forRangeArgsResult = forRangeArgs.SuperAdd(1, 2, 3, 4)
 
-	var resultNum4 int = importTest.Plus(3, 4)
+		fmt.Println(forRangeArgsResult)
+		// 2. forRangeArgs
+	*/
 
-	fmt.Println("resultNum4 - ", resultNum4)
+	/*
+		// 3. ifElse
+		fmt.Println(ifElse.CanIDrink(16))
+		fmt.Println(ifElse.CanIDrink2(16))
+		fmt.Println(ifElse.CanIDrink3(16))
+		// 3. ifElse
+	*/
 
-	var resultNum5 int = importTest.Plus(4, 7)
+	/*
+		// 4. switch
+		fmt.Println(switchTest.SwitchTest1(16))
+		fmt.Println(switchTest.SwitchTest2(16))
+		fmt.Println(switchTest.SwitchTest3(16))
+		fmt.Println(switchTest.SwitchTest4(16))
+		// 4. switch
+	*/
 
-	fmt.Println("resultNum5 - ", resultNum5)
+	/*
+	 */
+	// 5. pointer
+	pointerTest.PointerTest()
 }
