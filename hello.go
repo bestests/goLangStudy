@@ -1,6 +1,6 @@
 package main
 
-import pointerTest "github.com/goLangStudy/5_pointerTest"
+import arraySlice "github.com/goLangStudy/6_arraySlice"
 
 func multiply(a, b int) (c int) {
 	c = a * b
@@ -61,7 +61,11 @@ func main() {
 	*/
 
 	/*
-	 */
 	// 5. pointer
 	pointerTest.PointerTest()
+	*/
+
+	/**/
+	// 6. arraySlice
+	arraySlice.ArraySlice()
 }
