@@ -1,6 +1,6 @@
 package main
 
-import arraySlice "github.com/goLangStudy/6_arraySlice"
+import mapTest "github.com/goLangStudy/7_mapTest"
 
 func multiply(a, b int) (c int) {
 	c = a * b
@@ -71,6 +71,6 @@ func main() {
 	*/
 
 	/**/
-		// 7. map
-		mapTest.MapTest()
+	// 7. map
+	mapTest.MapTest()
 }
