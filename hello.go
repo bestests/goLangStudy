@@ -61,11 +61,16 @@ func main() {
 	*/
 
 	/*
-	// 5. pointer
-	pointerTest.PointerTest()
+		// 5. pointer
+		pointerTest.PointerTest()
+	*/
+
+	/*
+		// 6. arraySlice
+		arraySlice.ArraySlice()
 	*/
 
 	/**/
-	// 6. arraySlice
-	arraySlice.ArraySlice()
+		// 7. map
+		mapTest.MapTest()
 }
