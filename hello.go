@@ -87,7 +87,17 @@ func main() {
 	/**/
 	// account
 	account := accounts.NewAccount("kim")
-	fmt.Println(account)
+	fmt.Println(&account)
+	fmt.Println(*account)
+
 	// owner는 private이므로 접근 못함.
 	//fmt.Println(account.owner)
+
+	account = accounts.NewAccount("lee")
+	fmt.Println(&account)
+	fmt.Println(*account)
+
+	account1 := accounts.NewAccount("park")
+	fmt.Println(&account1)
+	fmt.Println(*account1)
 }
