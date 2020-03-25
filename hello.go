@@ -1,6 +1,10 @@
 package main
 
-import mapTest "github.com/goLangStudy/7_mapTest"
+import (
+	"fmt"
+
+	"github.com/goLangStudy/accounts"
+)
 
 func multiply(a, b int) (c int) {
 	c = a * b
@@ -70,7 +74,20 @@ func main() {
 		arraySlice.ArraySlice()
 	*/
 
+	/*
+		// 7. map
+		mapTest.MapTest()
+	*/
+
+	/*
+		// 8. structs
+		structs.Structs()
+	*/
+
 	/**/
-	// 7. map
-	mapTest.MapTest()
+	// account
+	account := accounts.NewAccount("kim")
+	fmt.Println(account)
+	// owner는 private이므로 접근 못함.
+	//fmt.Println(account.owner)
 }
