@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/goLangStudy/accounts"
 )
@@ -100,4 +101,26 @@ func main() {
 	account1 := accounts.NewAccount("park")
 	fmt.Println(&account1)
 	fmt.Println(*account1)
+
+	account.Deposit(1000)
+	fmt.Println(account.Balance())
+	fmt.Println(&account)
+
+	amount, err := account.Withdraw(2000)
+
+	// error 처리
+	if err != nil {
+		fmt.Println(err)
+		fmt.Println("failed amount -", amount)
+	}
+
+	result, err := account.Withdraw(500)
+
+	if err != nil {
+		// log로 error 출력 후 프로그램 종료함.
+		fmt.Println("failed amount -", amount)
+		log.Fatalln(err)
+	}
+
+	fmt.Println(result)
 }
