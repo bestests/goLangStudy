@@ -123,4 +123,10 @@ func main() {
 	}
 
 	fmt.Println(result)
+
+	fmt.Println("====================")
+	fmt.Println(account)
+	fmt.Println("====================")
+	fmt.Println(account1)
+	fmt.Println("====================")
 }
