@@ -121,7 +121,7 @@ func main() {
 			log.Fatalln(err)
 		}
 
-		fmt.Println(result)\
+		fmt.Println(result)
 
 		fmt.Println("====================")
 		fmt.Println(account)
@@ -153,5 +153,21 @@ func main() {
 		fmt.Println(err2)
 	} else {
 		fmt.Println(definition2)
+	}
+
+	err3 := dictionary1.Add("first", "first word")
+
+	if err3 != nil {
+		fmt.Println(err3)
+	} else {
+		fmt.Println(dictionary1["first"])
+	}
+
+	err4 := dictionary1.Add("second", "second word")
+
+	if err4 != nil {
+		fmt.Println(err4)
+	} else {
+		fmt.Println(dictionary1["second"])
 	}
 }
