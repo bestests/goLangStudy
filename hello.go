@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
-	"log"
 
-	"github.com/goLangStudy/accounts"
+	"github.com/goLangStudy/mydict"
 )
 
 func multiply(a, b int) (c int) {
@@ -85,42 +84,68 @@ func main() {
 		structs.Structs()
 	*/
 
-	/**/
-	// account
-	account := accounts.NewAccount("kim")
-	fmt.Println(&account)
-	fmt.Println(*account)
+	/*
+		// account
+		account := accounts.NewAccount("kim")
+		fmt.Println(&account)
+		fmt.Println(*account)
 
-	// owner는 private이므로 접근 못함.
-	//fmt.Println(account.owner)
+		// owner는 private이므로 접근 못함.
+		//fmt.Println(account.owner)
 
-	account = accounts.NewAccount("lee")
-	fmt.Println(&account)
-	fmt.Println(*account)
+		account = accounts.NewAccount("lee")
+		fmt.Println(&account)
+		fmt.Println(*account)
 
-	account1 := accounts.NewAccount("park")
-	fmt.Println(&account1)
-	fmt.Println(*account1)
+		account1 := accounts.NewAccount("park")
+		fmt.Println(&account1)
+		fmt.Println(*account1)
 
-	account.Deposit(1000)
-	fmt.Println(account.Balance())
-	fmt.Println(&account)
+		account.Deposit(1000)
+		fmt.Println(account.Balance())
+		fmt.Println(&account)
 
-	amount, err := account.Withdraw(2000)
+		amount, err := account.Withdraw(2000)
 
-	// error 처리
-	if err != nil {
-		fmt.Println(err)
-		fmt.Println("failed amount -", amount)
+		// error 처리
+		if err != nil {
+			fmt.Println(err)
+			fmt.Println("failed amount -", amount)
+		}
+
+		result, err := account.Withdraw(500)
+
+		if err != nil {
+			// log로 error 출력 후 프로그램 종료함.
+			fmt.Println("failed amount -", amount)
+			log.Fatalln(err)
+		}
+
+		fmt.Println(result)
+	*/
+
+	/*
+	 */
+	// Dictionary
+
+	// 이런식으로 타입만 선언해서 사용 가능 하지만 method를 활용하는게 더 좋음
+	dictionary1 := mydict.Dictionary{"first": "first word"}
+
+	fmt.Println(dictionary1)
+
+	definition1, err1 := dictionary1.Search("second")
+
+	if err1 != nil {
+		fmt.Println(err1)
+	} else {
+		fmt.Println(definition1)
 	}
 
-	result, err := account.Withdraw(500)
+	definition2, err2 := dictionary1.Search("first")
 
-	if err != nil {
-		// log로 error 출력 후 프로그램 종료함.
-		fmt.Println("failed amount -", amount)
-		log.Fatalln(err)
+	if err2 != nil {
+		fmt.Println(err2)
+	} else {
+		fmt.Println(definition2)
 	}
-
-	fmt.Println(result)
 }
