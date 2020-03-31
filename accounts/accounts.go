@@ -75,3 +75,8 @@ func (a *Account) Withdraw(amount int) (int, error) {
 
 	return a.balance, nil
 }
+
+// String - overriding print로 찍었을때, 변경 가능
+func (a *Account) String() string {
+	return fmt.Sprint("Owner   : ", a.owner, "\nBalance : ", a.balance)
+}

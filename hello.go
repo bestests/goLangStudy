@@ -121,7 +121,13 @@ func main() {
 			log.Fatalln(err)
 		}
 
-		fmt.Println(result)
+		fmt.Println(result)\
+
+		fmt.Println("====================")
+		fmt.Println(account)
+		fmt.Println("====================")
+		fmt.Println(account1)
+		fmt.Println("====================")
 	*/
 
 	/*
