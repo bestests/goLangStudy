@@ -139,6 +139,8 @@ func main() {
 
 	fmt.Println(dictionary1)
 
+	fmt.Println("========== Search Test ==========")
+
 	definition1, err1 := dictionary1.Search("second")
 
 	if err1 != nil {
@@ -155,6 +157,8 @@ func main() {
 		fmt.Println(definition2)
 	}
 
+	fmt.Println("========== Add Test ==========")
+
 	err3 := dictionary1.Add("first", "first word")
 
 	if err3 != nil {
@@ -167,6 +171,42 @@ func main() {
 
 	if err4 != nil {
 		fmt.Println(err4)
+	} else {
+		fmt.Println(dictionary1["second"])
+	}
+
+	fmt.Println("========== Update Test ==========")
+
+	err5 := dictionary1.Update("third", "third word")
+
+	if err5 != nil {
+		fmt.Println(err5)
+	} else {
+		fmt.Println(dictionary1["third"])
+	}
+
+	err6 := dictionary1.Update("second", "second word!!!")
+
+	if err6 != nil {
+		fmt.Println(err6)
+	} else {
+		fmt.Println(dictionary1["second"])
+	}
+
+	fmt.Println("========== Delete Test ==========")
+
+	err7 := dictionary1.Delete("third")
+
+	if err7 != nil {
+		fmt.Println(err7)
+	} else {
+		fmt.Println(dictionary1["third"])
+	}
+
+	err8 := dictionary1.Delete("second")
+
+	if err8 != nil {
+		fmt.Println(err8)
 	} else {
 		fmt.Println(dictionary1["second"])
 	}
