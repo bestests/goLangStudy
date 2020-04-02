@@ -269,13 +269,18 @@ func main() {
 		"https://academy.nomadcoders.co/",
 	}
 
+	// 채널 생성
 	c := make(chan hiturl.ResponseResult)
 
+	// urlArr 반복문
 	for _, url := range urlArr {
+		// goroutine을 이용한 병렬 호출
 		go hiturl.HitURL2(url, c)
 	}
 
+	// 채널 값을 출력하기 위한 반복문
 	for i := 0; i < len(urlArr); i++ {
+		// goroutine 실행 한 만큼 채널의 값 가져오기
 		fmt.Println(<-c)
 	}
 }
