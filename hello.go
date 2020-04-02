@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/goLangStudy/mydict"
+	"github.com/goLangStudy/channeltest"
 )
 
 func multiply(a, b int) (c int) {
@@ -131,83 +131,126 @@ func main() {
 	*/
 
 	/*
+		// Dictionary
+
+		// 이런식으로 타입만 선언해서 사용 가능 하지만 method를 활용하는게 더 좋음
+		dictionary1 := mydict.Dictionary{"first": "first word"}
+
+		fmt.Println(dictionary1)
+
+		fmt.Println("========== Search Test ==========")
+
+		definition1, err1 := dictionary1.Search("second")
+
+		if err1 != nil {
+			fmt.Println(err1)
+		} else {
+			fmt.Println(definition1)
+		}
+
+		definition2, err2 := dictionary1.Search("first")
+
+		if err2 != nil {
+			fmt.Println(err2)
+		} else {
+			fmt.Println(definition2)
+		}
+
+		fmt.Println("========== Add Test ==========")
+
+		err3 := dictionary1.Add("first", "first word")
+
+		if err3 != nil {
+			fmt.Println(err3)
+		} else {
+			fmt.Println(dictionary1["first"])
+		}
+
+		err4 := dictionary1.Add("second", "second word")
+
+		if err4 != nil {
+			fmt.Println(err4)
+		} else {
+			fmt.Println(dictionary1["second"])
+		}
+
+		fmt.Println("========== Update Test ==========")
+
+		err5 := dictionary1.Update("third", "third word")
+
+		if err5 != nil {
+			fmt.Println(err5)
+		} else {
+			fmt.Println(dictionary1["third"])
+		}
+
+		err6 := dictionary1.Update("second", "second word!!!")
+
+		if err6 != nil {
+			fmt.Println(err6)
+		} else {
+			fmt.Println(dictionary1["second"])
+		}
+
+		fmt.Println("========== Delete Test ==========")
+
+		err7 := dictionary1.Delete("third")
+
+		if err7 != nil {
+			fmt.Println(err7)
+		} else {
+			fmt.Println(dictionary1["third"])
+		}
+
+		err8 := dictionary1.Delete("second")
+
+		if err8 != nil {
+			fmt.Println(err8)
+		} else {
+			fmt.Println(dictionary1["second"])
+		}
+	*/
+
+	/*
+		// hiturl
+		var urls []string = []string{
+			"https://www.naver.com",
+			"https://www.daum.net",
+			"https://www.google.com",
+		}
+
+		for _, url := range urls {
+			err := hiturl.HitURL(url)
+
+			if err != nil {
+				fmt.Println(err)
+			}
+
+		}
+	*/
+
+	/*
 	 */
-	// Dictionary
+	// channeltest
+	arr := [5]string{"A", "B", "C", "D", "E"}
 
-	// 이런식으로 타입만 선언해서 사용 가능 하지만 method를 활용하는게 더 좋음
-	dictionary1 := mydict.Dictionary{"first": "first word"}
-
-	fmt.Println(dictionary1)
-
-	fmt.Println("========== Search Test ==========")
-
-	definition1, err1 := dictionary1.Search("second")
-
-	if err1 != nil {
-		fmt.Println(err1)
-	} else {
-		fmt.Println(definition1)
+	for _, str := range arr {
+		result := channeltest.Run(str)
+		fmt.Println(result)
 	}
 
-	definition2, err2 := dictionary1.Search("first")
+	//channel 생성 - 변수명 := make(chan 체널이용해서 받을 타입)
+	c := make(chan string)
 
-	if err2 != nil {
-		fmt.Println(err2)
-	} else {
-		fmt.Println(definition2)
+	for _, str := range arr {
+		go channeltest.RunChan(str, c)
 	}
 
-	fmt.Println("========== Add Test ==========")
-
-	err3 := dictionary1.Add("first", "first word")
-
-	if err3 != nil {
-		fmt.Println(err3)
-	} else {
-		fmt.Println(dictionary1["first"])
-	}
-
-	err4 := dictionary1.Add("second", "second word")
-
-	if err4 != nil {
-		fmt.Println(err4)
-	} else {
-		fmt.Println(dictionary1["second"])
-	}
-
-	fmt.Println("========== Update Test ==========")
-
-	err5 := dictionary1.Update("third", "third word")
-
-	if err5 != nil {
-		fmt.Println(err5)
-	} else {
-		fmt.Println(dictionary1["third"])
-	}
-
-	err6 := dictionary1.Update("second", "second word!!!")
-
-	if err6 != nil {
-		fmt.Println(err6)
-	} else {
-		fmt.Println(dictionary1["second"])
-	}
-
-	fmt.Println("========== Delete Test ==========")
-
-	err7 := dictionary1.Delete("third")
-
-	if err7 != nil {
-		fmt.Println(err7)
-	} else {
-		fmt.Println(dictionary1["third"])
-	}
-
-	err8 := dictionary1.Delete("second")
-
-	if err8 != nil {
-		fmt.Println(err8)
-	} else {
-		fmt.Println(dictionary1["second"])
+	// 채널에 arr의 length만큰 값을 넣었으므로, 그만큼 불러옴
+	for i := range arr {
+		// 변수에 채널에 담긴 값을 넣어줌
+		// 프로그램 진행 중 '<-'를 만나면 값이 담기기 기다림 block
+		result := <-c
+		fmt.Println("Main response Channel : ", result, " - ", (i + 1))
 	}
 }
