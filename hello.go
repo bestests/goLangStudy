@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/goLangStudy/channeltest"
+	"github.com/goLangStudy/hiturl"
 )
 
 func multiply(a, b int) (c int) {
@@ -230,27 +230,52 @@ func main() {
 	*/
 
 	/*
+		// channeltest
+		arr := [5]string{"A", "B", "C", "D", "E"}
+
+		for _, str := range arr {
+			result := channeltest.Run(str)
+			fmt.Println(result)
+		}
+
+		//channel 생성 - 변수명 := make(chan 체널이용해서 받을 타입)
+		c := make(chan string)
+
+		for _, str := range arr {
+			go channeltest.RunChan(str, c)
+		}
+
+		// 채널에 arr의 length만큰 값을 넣었으므로, 그만큼 불러옴
+		for i := range arr {
+			// 변수에 채널에 담긴 값을 넣어줌
+			// 프로그램 진행 중 '<-'를 만나면 값이 담기기 기다림 block
+			result := <-c
+			fmt.Println("Main response Channel : ", result, " - ", (i + 1))
+		}
+	*/
+
+	/*
 	 */
-	// channeltest
-	arr := [5]string{"A", "B", "C", "D", "E"}
-
-	for _, str := range arr {
-		result := channeltest.Run(str)
-		fmt.Println(result)
+	// HitURL2 - Use Goroutine
+	var urlArr [9]string = [9]string{
+		"https://www.airbnb.com/",
+		"https://www.google.com/",
+		"https://www.amazon.com/",
+		"https://www.reddit.com/",
+		"https://www.naver.com/",
+		"https://www.soundcloud.com/",
+		"https://www.facebook.com/",
+		"https://www.instagram.com/",
+		"https://academy.nomadcoders.co/",
 	}
 
-	//channel 생성 - 변수명 := make(chan 체널이용해서 받을 타입)
-	c := make(chan string)
+	c := make(chan hiturl.ResponseResult)
 
-	for _, str := range arr {
-		go channeltest.RunChan(str, c)
+	for _, url := range urlArr {
+		go hiturl.HitURL2(url, c)
 	}
 
-	// 채널에 arr의 length만큰 값을 넣었으므로, 그만큼 불러옴
-	for i := range arr {
-		// 변수에 채널에 담긴 값을 넣어줌
-		// 프로그램 진행 중 '<-'를 만나면 값이 담기기 기다림 block
-		result := <-c
-		fmt.Println("Main response Channel : ", result, " - ", (i + 1))
+	for i := 0; i < len(urlArr); i++ {
+		fmt.Println(<-c)
 	}
 }
